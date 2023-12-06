@@ -1,0 +1,27 @@
+import 'package:flutter/material.dart';
+import 'package:mealsapp/model/category.dart';
+
+class CategoryCart extends StatelessWidget {
+  const CategoryCart(
+      {Key? key, required this.category, required this.onSelectCategory})
+      : super(key: key);
+  final void Function() onSelectCategory;
+  final Category category;
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      splashColor: Theme.of(context).primaryColor,
+      onTap: () => {onSelectCategory()},
+      child: Container(
+        padding: const EdgeInsets.all(16),
+        decoration: BoxDecoration(
+            gradient: LinearGradient(colors: [
+          category.color.withOpacity(0.5),
+          category.color.withOpacity(0.9)
+        ], begin: Alignment.topLeft, end: Alignment.bottomRight)),
+        child: Text(category.name),
+      ),
+    );
+  }
+}
