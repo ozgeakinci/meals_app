@@ -8,14 +8,37 @@ class MealCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.all(8),
-      child: InkWell(
-        onTap: () {
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (ctx) => MealDetails(meal: meal)));
-        },
-        child: Row(children: [Text(meal.name)]),
+    return InkWell(
+      onTap: () {
+        Navigator.of(context)
+            .push(MaterialPageRoute(builder: (ctx) => MealDetails(meal: meal)));
+      },
+      child: Padding(
+        padding: const EdgeInsets.all(14.0),
+        child: Card(
+            child: SingleChildScrollView(
+          child: Column(
+            children: [
+              ClipRRect(
+                borderRadius: const BorderRadius.all(Radius.circular(8)),
+                child: Image.network(meal.imageUrl),
+              ),
+              SizedBox(
+                  height: 40,
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
+                      meal.name,
+                      style: TextStyle(
+                        color: Theme.of(context).textTheme.displayLarge!.color,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 18,
+                      ),
+                    ),
+                  ))
+            ],
+          ),
+        )),
       ),
     );
   }

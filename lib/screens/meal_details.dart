@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mealsapp/model/meal.dart';
 import 'package:mealsapp/provider/favorite_provider.dart';
+import 'package:mealsapp/widgets/meal_detail_card.dart';
 
 class MealDetails extends ConsumerStatefulWidget {
   const MealDetails({super.key, required this.meal});
@@ -30,7 +31,7 @@ class _MealDetailsState extends ConsumerState<MealDetails> {
                   : Icons.favorite_border))
         ],
       ),
-      body: Text(widget.meal.name),
+      body: MealDetailCard(meal: widget.meal),
     );
   }
 }

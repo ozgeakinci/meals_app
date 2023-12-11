@@ -41,23 +41,25 @@ class Categories extends ConsumerWidget {
               icon: const Icon(Icons.favorite))
         ],
       ),
-      body: GridView(
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
-          crossAxisSpacing: 20,
-          mainAxisSpacing: 20,
-        ),
-        children: [
-          for (final category in categoriesFromState)
-            CategoryCart(
-              category: category,
-              onSelectCategory: () {
-                _selectCategory(context, category, mealsFromState);
-              },
-            )
+      body: Padding(
+        padding: const EdgeInsets.only(top: 20.0),
+        child: GridView(
+          gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+            crossAxisCount: 2,
+            mainAxisSpacing: 25,
+          ),
+          children: [
+            for (final category in categoriesFromState)
+              CategoryCart(
+                category: category,
+                onSelectCategory: () {
+                  _selectCategory(context, category, mealsFromState);
+                },
+              )
 
-          // const Center(child: CircularProgressIndicator()),
-        ],
+            // const Center(child: CircularProgressIndicator()),
+          ],
+        ),
       ),
     );
   }

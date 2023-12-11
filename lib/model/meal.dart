@@ -4,11 +4,14 @@ class Meal {
   final String name;
   final String imageUrl;
   final List<String> ingredients;
+  final String prepare;
 
-  const Meal(
-      {required this.id,
-      required this.categoryId,
-      required this.name,
-      required this.imageUrl,
-      required this.ingredients});
+  const Meal({
+    required this.id,
+    required this.categoryId,
+    required this.name,
+    required this.imageUrl,
+    required this.ingredients,
+    required this.prepare,
+  });
 }

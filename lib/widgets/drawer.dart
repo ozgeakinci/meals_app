@@ -15,11 +15,11 @@ class _DrawerWidgetState extends State<DrawerWidget> {
       child: ListView(
         padding: EdgeInsets.zero,
         children: [
-          const DrawerHeader(
+          DrawerHeader(
             decoration: BoxDecoration(
-              color: Color(0xffF2CB05),
+              color: Theme.of(context).primaryColor,
             ),
-            child: Text(
+            child: const Text(
               'Menu',
               style: TextStyle(
                   fontSize: 24,

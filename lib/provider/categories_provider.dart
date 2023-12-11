@@ -19,13 +19,13 @@ final categoriesProvider = Provider((ref) {
     Category(
         id: '3',
         name: 'Ana Yemekler',
-        color: Color(0xffF2CB05),
+        color: Color(0xffF28705),
         imgUrl:
             'https://cdn.yemek.com/mnresize/1250/833/uploads/2017/03/macar-kebabi-one-cikan.jpg'),
     Category(
         id: '4',
         name: 'Tatlılar',
-        color: Color(0xffF28705),
+        color: Color.fromARGB(138, 73, 45, 0),
         imgUrl:
             'https://cdn.yemek.com/mnresize/1250/833/uploads/2020/11/tahinli-irmik-tatlisi-tarifi.jpg'),
   ];
